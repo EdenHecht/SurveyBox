@@ -1,0 +1,10 @@
+.header-container {
+  background: red;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.features {
+  display: flex;
+}

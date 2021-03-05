@@ -1,0 +1,7 @@
+.timeline-container {
+  width: 270px;
+  height: 100vh;
+  background: #ffffff;
+  float: left;
+  /* position: fixed; */
+}

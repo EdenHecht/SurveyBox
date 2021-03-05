@@ -1,0 +1,9 @@
+.page-editor-container {
+  width: 270px;
+  height: 100vh;
+  background: #ffffff;
+  float: right;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
