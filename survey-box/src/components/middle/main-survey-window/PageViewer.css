@@ -1,6 +1,7 @@
 .page-viewer-container {
   width: 700px;
   height: 500px;
-  background: rosybrown;
-  margin: 50px auto;
+  background: white;
+  margin: 37px auto;
+  border-radius: 7px;
 }

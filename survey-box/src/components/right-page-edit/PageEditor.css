@@ -7,3 +7,35 @@
   top: 0;
   right: 0;
 }
+
+.question-name-example {
+  color: #222831;
+  font-size: 18px;
+  font-weight: 400;
+  border-bottom: 3px solid #e5e5e5;
+  padding: 19px;
+}
+
+.page-style {
+  padding: 19px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+
+.background {
+  display: flex;
+}
+
+.sample {
+  content: "";
+  width: 17px;
+  height: 17px;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid #222831;
+  margin-right: 30px;
+}

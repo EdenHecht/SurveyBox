@@ -1,5 +1,6 @@
 .main-window-container {
   height: 100vh;
-  width: 100vw;
-  padding-right: 270px;
+  /* width: 100vw; */
+  padding: 0 270px;
+  overflow-y: overlay;
 }

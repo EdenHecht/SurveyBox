@@ -1,10 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
 .header-container {
-  background: red;
   display: flex;
   justify-content: space-between;
   padding: 30px;
+  width: 700px;
+  margin: 0 auto;
 }
 
 .features {
   display: flex;
+  padding-top: 11px;
+}
+
+.URL-icon {
+  width: 24px;
+  margin-right: 24px;
+}
+
+.results-icon {
+  width: 41px;
+  margin-top: -9px;
+}
+
+.logo {
+  font-family: "anton";
+  font-size: 39px;
+  color: #597b77;
 }
