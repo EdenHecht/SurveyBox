@@ -3,9 +3,10 @@
   height: 100vh;
   background: #ffffff;
   float: left;
-  position: fixed;
+  /*new!*/
+  /* position: fixed; 
   top: 0;
-  left: 0;
+  left: 0; */
 }
 
 .survey-name {
