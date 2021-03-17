@@ -1,18 +1,61 @@
 .optional-pages-container {
-  padding-bottom: 40px;
+  width: 720px;
+  margin: 0 auto;
+  padding: 0px 15px;
+  padding-bottom: 30px;
 }
 
-.circ-btn {
-  width: 50px;
-  height: 50px;
-  background: #d9a04f;
+.circ-btn-close {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  margin: auto;
-  font-size: 50px;
+  font-size: 48px;
   padding: 0;
   line-height: 0;
   color: #f9f9f9;
+}
+
+.circ-btn {
+  background: #d9a04f;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  border: none;
+  cursor: pointer;
+}
+
+.circ-btn-open {
+  clip-path: polygon(
+    20% 0%,
+    0% 20%,
+    30% 50%,
+    0% 80%,
+    20% 100%,
+    50% 70%,
+    80% 100%,
+    100% 80%,
+    70% 50%,
+    100% 20%,
+    80% 0%,
+    50% 30%
+  );
+  width: 30px;
+  height: 30px;
+}
+
+.circ-btn:focus {
+  outline: none;
+}
+
+.circ-btn-close::after {
+  content: "+";
+}
+
+.options-container {
+  /* display: flex;
+  justify-content: center;
+  width: 806px;
+  margin: 0 auto;
+  padding: 20px; */
 }
