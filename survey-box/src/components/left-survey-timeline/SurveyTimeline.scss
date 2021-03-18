@@ -34,9 +34,6 @@
   margin-top: 40px;
 }
 
-.page-preview {
-}
-
 .preview {
   width: 164px;
   height: 133px;
@@ -44,8 +41,22 @@
   border-radius: 10px;
   background: #f4f4f4;
   margin-bottom: 6px;
+  position: relative;
 }
 
 .page-type {
   font-size: 16px;
+}
+
+.trash-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.trash-icon:hover {
+  .trash-path {
+    fill: #d9a04f;
+  }
 }

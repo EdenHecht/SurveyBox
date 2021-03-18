@@ -52,10 +52,14 @@
   content: "+";
 }
 
-.options-container {
-  /* display: flex;
-  justify-content: center;
-  width: 806px;
-  margin: 0 auto;
-  padding: 20px; */
+.page-btn {
+  cursor: pointer;
+}
+
+.inline-btn-path {
+  pointer-events: none;
+}
+
+.page-btn:hover {
+  fill: #dfe4e3;
 }
