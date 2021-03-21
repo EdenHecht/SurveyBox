@@ -11,7 +11,6 @@ function SurveyTimeline() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    pages.length === 0 && dispatch(updateCurrPage(-1))
     pages.length === 1 && dispatch(updateCurrPage(0))
   }, [pages, dispatch])
   
@@ -26,7 +25,7 @@ function SurveyTimeline() {
             <div className={`preview ${currPageIndex === index && "curr-page"}`} 
             onClick={() => dispatch(updateCurrPage(index))}>
             <svg className="trash-icon" onClick={e => {
-              e.stopPropagation();
+              e.stopPropagation(); // to prevent parent dispatch
               dispatch(deletePage(index));
               }
             }

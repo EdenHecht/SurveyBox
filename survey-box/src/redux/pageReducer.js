@@ -20,17 +20,22 @@ const pageReducer = (state = initialState, action) => {
     case DELETE_PAGE:
       currPages = [...state.pages];
       const removedIndex = action.payload;
-      if (removedIndex === 0) {
-        currPages = currPages.slice(1);
-      } else {
-        currPages = currPages
-          .slice(0, removedIndex)
-          .concat(currPages.slice(removedIndex + 1));
+      let updatedCurrPageIndex = state.currPageIndex;
+
+      if (removedIndex <= state.currPageIndex) {
+        updatedCurrPageIndex -= 1;
       }
+
+      removedIndex === 0
+        ? (currPages = currPages.slice(1))
+        : (currPages = currPages
+            .slice(0, removedIndex)
+            .concat(currPages.slice(removedIndex + 1)));
 
       return {
         ...state,
         pages: currPages,
+        currPageIndex: updatedCurrPageIndex,
       };
 
     case UPDATE_CURR_PAGE:
