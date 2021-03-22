@@ -1,4 +1,5 @@
 import { ADD_PAGE, DELETE_PAGE, UPDATE_CURR_PAGE } from "./pageTypes";
+import buildPage from "../services/PageFactory";
 
 const initialState = {
   pages: [],
@@ -10,13 +11,15 @@ const pageReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case ADD_PAGE:
-      const newPage = { page_type: action.payload };
-      currPages = [...state.pages, newPage];
+      const pageObject = buildPage(action.payload);
+
+      currPages = [...state.pages, pageObject];
 
       return {
         ...state,
         pages: currPages,
       };
+
     case DELETE_PAGE:
       currPages = [...state.pages];
       const removedIndex = action.payload;
@@ -43,6 +46,7 @@ const pageReducer = (state = initialState, action) => {
         ...state,
         currPageIndex: action.payload,
       };
+
     default:
       return state;
   }

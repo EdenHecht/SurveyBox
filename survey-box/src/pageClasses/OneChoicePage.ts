@@ -1,13 +1,13 @@
 import IPage from "./IPage";
-import {GOODBYE_PAGE, ONE_CHOICE} from "../services/pageConstants"
+import {ONE_CHOICE_PAGE, ONE_CHOICE} from "../services/pageConstants"
 import IQuestion from "./IQuestion";
 
-export default class OneChoisePage implements IPage, IQuestion {
+export default class OneChoicePage implements IPage, IQuestion {
     pageType: string;
     questionType: string;
 
     constructor() {
-        this.pageType = GOODBYE_PAGE; 
+        this.pageType = ONE_CHOICE_PAGE; 
         this.questionType = ONE_CHOICE;
     }
 }

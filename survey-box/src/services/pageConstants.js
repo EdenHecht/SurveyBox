@@ -1,9 +1,9 @@
-export const WELCOME_PAGE = "WELCOME_PAGE";
-export const ONE_CHOICE_PAGE = "ONE_CHOICE_PAGE";
-export const MULTI_CHOICE_PAGE = "MULTI_CHOICE_PAGE";
-export const TEXT_AREA_PAGE = "TEXT_AREA_PAGE";
-export const TEXT_FIELD_PAGE = "TEXT_FIELD_PAGE";
-export const GOODBYE_PAGE = "GOODBYE_PAGE";
+export const WELCOME_PAGE = "Welcome page";
+export const ONE_CHOICE_PAGE = "One choice question";
+export const MULTI_CHOICE_PAGE = "Multiple choice question";
+export const TEXT_AREA_PAGE = "Text area question";
+export const TEXT_FIELD_PAGE = "Text field question";
+export const GOODBYE_PAGE = "Goodbye page";
 
 export const ONE_CHOICE = "ONE_CHOICE";
 export const MULTI_CHOICE = "MULTI_CHOICE";

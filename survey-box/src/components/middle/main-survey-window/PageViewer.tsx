@@ -9,7 +9,7 @@ function PageViewer() {
 
   return (
     <div className="page-viewer-container">
-      <div className="preview-window">{currPage && currPage.page_type}</div>
+      <div className="preview-window">{currPage && currPage.pageType}</div>
     </div>
   );
 }
