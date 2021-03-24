@@ -3,8 +3,10 @@ import {WELCOME_PAGE} from "../services/pageConstants"
 
 export default class WelcomePage implements IPage {
     pageType: string;
+    id: number;
 
-    constructor() {
-        this.pageType = WELCOME_PAGE; 
+    constructor(id: number) {
+        this.pageType = WELCOME_PAGE;
+        this.id = id; 
     }
 }

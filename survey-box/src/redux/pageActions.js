@@ -1,4 +1,9 @@
-import { ADD_PAGE, DELETE_PAGE, UPDATE_CURR_PAGE } from "./pageTypes";
+import {
+  ADD_PAGE,
+  DELETE_PAGE,
+  UPDATE_CURR_PAGE,
+  UPDATE_PAGE_ORDER,
+} from "./pageTypes";
 
 export const addPage = (pageType) => {
   return {
@@ -18,5 +23,12 @@ export const updateCurrPage = (pageIndex) => {
   return {
     type: UPDATE_CURR_PAGE,
     payload: pageIndex,
+  };
+};
+
+export const updatePageOrder = (updatedParams) => {
+  return {
+    type: UPDATE_PAGE_ORDER,
+    payload: updatedParams,
   };
 };

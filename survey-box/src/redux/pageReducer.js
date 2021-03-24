@@ -1,4 +1,9 @@
-import { ADD_PAGE, DELETE_PAGE, UPDATE_CURR_PAGE } from "./pageTypes";
+import {
+  ADD_PAGE,
+  DELETE_PAGE,
+  UPDATE_CURR_PAGE,
+  UPDATE_PAGE_ORDER,
+} from "./pageTypes";
 import buildPage from "../services/PageFactory";
 
 const initialState = {
@@ -29,11 +34,13 @@ const pageReducer = (state = initialState, action) => {
         updatedCurrPageIndex -= 1;
       }
 
-      removedIndex === 0
-        ? (currPages = currPages.slice(1))
-        : (currPages = currPages
-            .slice(0, removedIndex)
-            .concat(currPages.slice(removedIndex + 1)));
+      if (removedIndex === 0) {
+        currPages = currPages.slice(1);
+        updatedCurrPageIndex = 0;
+      } else
+        currPages = currPages
+          .slice(0, removedIndex)
+          .concat(currPages.slice(removedIndex + 1));
 
       return {
         ...state,
@@ -45,6 +52,13 @@ const pageReducer = (state = initialState, action) => {
       return {
         ...state,
         currPageIndex: action.payload,
+      };
+
+    case UPDATE_PAGE_ORDER:
+      return {
+        ...state,
+        currPageIndex: action.payload.updatedPageIndex,
+        pages: action.payload.pagesCopy,
       };
 
     default:

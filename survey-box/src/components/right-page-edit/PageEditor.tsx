@@ -20,7 +20,7 @@ function PageEditor() {
           <div className="hex-number feature-text"> 000000</div>
         </div>
       </div>
-      { currPage.questionType !== undefined ? <QuestionStyleOptions/> : <StatmentStyleOptions/>}
+      { currPage !== null ? (currPage.questionType !== undefined ? <QuestionStyleOptions/> : <StatmentStyleOptions/>) : null}
       <div className="button-style pad border-bottom">
         <div className="section-title">Button Design</div>
         <div className="font-size edit-feature bottom-margin">

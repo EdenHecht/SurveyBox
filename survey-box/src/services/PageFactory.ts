@@ -7,20 +7,23 @@ import OneChoicePage from "../pageClasses/OneChoicePage"
 import MultiChoicePage from "../pageClasses/MultiChoicePage"
 import IPage from "../pageClasses/IPage"
 
+
+let pagesIdCounter = 0;
+
 let buildPage = (pageType: string):IPage|null => {
     switch (pageType) {
         case WELCOME_PAGE:
-            return new WelcomePage();
+            return new WelcomePage(pagesIdCounter++);
         case GOODBYE_PAGE:
-            return new GoodbyePage();
+            return new GoodbyePage(pagesIdCounter++);
         case TEXT_AREA_PAGE:
-            return new TextAreaPage();
+            return new TextAreaPage(pagesIdCounter++);
         case TEXT_FIELD_PAGE:
-            return new TextFieldPage();
+            return new TextFieldPage(pagesIdCounter++);
         case ONE_CHOICE_PAGE:
-            return new OneChoicePage();
+            return new OneChoicePage(pagesIdCounter++);
         case MULTI_CHOICE_PAGE:
-            return new MultiChoicePage();
+            return new MultiChoicePage(pagesIdCounter++);
     
         default:
             return null;

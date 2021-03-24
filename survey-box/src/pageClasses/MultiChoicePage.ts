@@ -5,9 +5,11 @@ import IQuestion from "./IQuestion";
 export default class MultiChoicePage implements IPage, IQuestion {
     pageType: string;
     questionType: string;
-
-    constructor() {
+    id: number;
+    
+    constructor(id: number) {
         this.pageType = MULTI_CHOICE_PAGE; 
         this.questionType = MULTI_CHOICE;
+        this.id = id;
     }
 }
