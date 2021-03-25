@@ -3,6 +3,7 @@ import {
   DELETE_PAGE,
   UPDATE_CURR_PAGE,
   UPDATE_PAGE_ORDER,
+  UPDATE_PAGE_BACKGROUND,
 } from "./pageTypes";
 
 export const addPage = (pageType) => {
@@ -30,5 +31,12 @@ export const updatePageOrder = (updatedParams) => {
   return {
     type: UPDATE_PAGE_ORDER,
     payload: updatedParams,
+  };
+};
+
+export const updatePageBackground = (pageId, updatedColor) => {
+  return {
+    type: UPDATE_PAGE_BACKGROUND,
+    payload: { pageId, updatedColor },
   };
 };

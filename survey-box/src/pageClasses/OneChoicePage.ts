@@ -6,10 +6,13 @@ export default class OneChoicePage implements IPage, IQuestion {
     pageType: string;
     questionType: string;
     id: number;
+    background: string;
     
     constructor(id: number) {
         this.pageType = ONE_CHOICE_PAGE; 
         this.questionType = ONE_CHOICE;
         this.id = id;
+        this.background = "#ffffff"
+
     }
 }

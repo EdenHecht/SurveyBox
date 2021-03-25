@@ -3,10 +3,7 @@
   height: 100vh;
   background: #ffffff;
   float: right;
-  /*new!*/
-  /* position: fixed;
-  top: 0;
-  right: 0; */
+  min-width: 270px;
 }
 
 .border-bottom {
@@ -38,10 +35,10 @@
   content: "";
   width: 17px;
   height: 17px;
-  background: white;
   border-radius: 50%;
   border: 1px solid #222831;
   margin-right: 30px;
+  cursor: pointer;
 }
 
 .feature-text {
@@ -84,4 +81,18 @@
 
 .answer-text-field {
   width: 150px;
+}
+
+.bg-color-picker {
+  z-index: 1;
+  position: absolute;
+  top: 25px;
+}
+
+.background {
+  position: relative;
+}
+
+.sample:focus {
+  outline: none;
 }

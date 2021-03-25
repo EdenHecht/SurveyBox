@@ -6,10 +6,13 @@ export default class MultiChoicePage implements IPage, IQuestion {
     pageType: string;
     questionType: string;
     id: number;
+    background: string;
     
     constructor(id: number) {
         this.pageType = MULTI_CHOICE_PAGE; 
         this.questionType = MULTI_CHOICE;
         this.id = id;
+        this.background = "#ffffff"
+
     }
 }

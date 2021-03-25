@@ -6,10 +6,13 @@ export default class TextFieldPage implements IPage, IQuestion {
     pageType: string;
     questionType: string;
     id: number;
+    background: string;
 
     constructor(id: number) {
         this.pageType = TEXT_FIELD_PAGE; 
         this.questionType = TEXT_FIELD;
         this.id = id;
+        this.background = "#ffffff"
+
     }
 }

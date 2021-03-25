@@ -6,10 +6,12 @@ export default class TextAreaPage implements IPage, IQuestion {
     pageType: string;
     questionType: string;
     id: number;
+    background: string;
 
     constructor(id: number) {
         this.pageType = TEXT_AREA_PAGE; 
         this.questionType = TEXT_AREA;
         this.id = id;
+        this.background ="#ffffff"
     }
 }

@@ -15,6 +15,7 @@ function SurveyTimeline() {
   }, [pages, dispatch])
   
   const onDragEnd = useCallback((result) => {
+    if (!result.destination) return;
     const pagesCopy:Array<any> = Array.from(pages);
     const currPageId = pagesCopy[currPageIndex].id;
     const [reorderedPages] = pagesCopy.splice(result.source.index, 1);

@@ -3,6 +3,7 @@ import {
   DELETE_PAGE,
   UPDATE_CURR_PAGE,
   UPDATE_PAGE_ORDER,
+  UPDATE_PAGE_BACKGROUND,
 } from "./pageTypes";
 import buildPage from "../services/PageFactory";
 
@@ -59,6 +60,14 @@ const pageReducer = (state = initialState, action) => {
         ...state,
         currPageIndex: action.payload.updatedPageIndex,
         pages: action.payload.pagesCopy,
+      };
+
+    case UPDATE_PAGE_BACKGROUND:
+      let pagesCopy = [...state.pages];
+      pagesCopy[action.payload.pageId].background = action.payload.updatedColor;
+      return {
+        ...state,
+        pages: pagesCopy,
       };
 
     default:
