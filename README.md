@@ -30,7 +30,8 @@ I divided this project into 3 parts:
 9.	Add a drag and drop functionality to the page timeline and update the store accordingly
 10.	Separate the edit bar to individual component- statements/questions and display them dynamically
 11.	Make the background button work, display the changes in the preview window and update the state accordingly
+12.	Make the "next" button edit functionality, display the changes in the preview window and update the state accordingly
 
 ###### next milestone:
-Make the "next" button work, display the changes in the preview window and update the state accordingly
+Make the statement pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
 	
