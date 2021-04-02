@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ChromePicker } from "react-color";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
-import useComponentVisible from "../../services/customeHooks/VisibleComponent";
+import useComponentVisible from "../../../services/customeHooks/VisibleComponent";
 
 function BackgroundComponent(props: any) {
   const { actionFunction, defualtColor, colorVarName } = props;

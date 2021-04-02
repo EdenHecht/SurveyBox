@@ -7,6 +7,9 @@ import {
   UPDATE_BUTTON_FONT_SIZE,
   UPDATE_BUTTON_BG_COLOR,
   UPDATE_BUTTON_FONT_COLOR,
+  UPDATE_HEADER_COLOR,
+  UPDATE_HEADER_SIZE,
+  UPDATE_HEADER_TEXT,
 } from "./pageTypes";
 import buildPage from "../services/PageFactory";
 
@@ -18,6 +21,7 @@ const initialState = {
 const pageReducer = (state = initialState, action) => {
   let currPages;
   let pagesCopy;
+  let pageIndex;
 
   switch (action.type) {
     case ADD_PAGE:
@@ -68,7 +72,10 @@ const pageReducer = (state = initialState, action) => {
 
     case UPDATE_PAGE_BACKGROUND:
       pagesCopy = [...state.pages];
-      pagesCopy[action.payload.pageId].background = action.payload.updatedColor;
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].background = action.payload.updatedColor;
       return {
         ...state,
         pages: pagesCopy,
@@ -76,8 +83,10 @@ const pageReducer = (state = initialState, action) => {
 
     case UPDATE_BUTTON_FONT_SIZE:
       pagesCopy = [...state.pages];
-      pagesCopy[action.payload.pageId].buttonFontSize =
-        action.payload.updatedFontSize;
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].buttonFontSize = action.payload.updatedFontSize;
       return {
         ...state,
         pages: pagesCopy,
@@ -85,8 +94,10 @@ const pageReducer = (state = initialState, action) => {
 
     case UPDATE_BUTTON_BG_COLOR:
       pagesCopy = [...state.pages];
-      pagesCopy[action.payload.pageId].buttonBackground =
-        action.payload.updatedBgColor;
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].buttonBackground = action.payload.updatedBgColor;
       return {
         ...state,
         pages: pagesCopy,
@@ -94,8 +105,43 @@ const pageReducer = (state = initialState, action) => {
 
     case UPDATE_BUTTON_FONT_COLOR:
       pagesCopy = [...state.pages];
-      pagesCopy[action.payload.pageId].buttonTextColor =
-        action.payload.updatedFontColor;
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].buttonTextColor = action.payload.updatedFontColor;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_HEADER_COLOR:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].headerColor = action.payload.updatedHeaderColor;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_HEADER_SIZE:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].headerFontSize = action.payload.updatedHeaderSize;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_HEADER_TEXT:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].headerText = action.payload.updatedHeaderText;
       return {
         ...state,
         pages: pagesCopy,

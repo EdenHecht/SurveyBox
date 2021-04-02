@@ -7,6 +7,9 @@ import {
   UPDATE_BUTTON_FONT_SIZE,
   UPDATE_BUTTON_BG_COLOR,
   UPDATE_BUTTON_FONT_COLOR,
+  UPDATE_HEADER_COLOR,
+  UPDATE_HEADER_SIZE,
+  UPDATE_HEADER_TEXT,
 } from "./pageTypes";
 
 export const addPage = (pageType) => {
@@ -61,5 +64,26 @@ export const updateButtonFontColor = (pageId, updatedFontColor) => {
   return {
     type: UPDATE_BUTTON_FONT_COLOR,
     payload: { pageId, updatedFontColor },
+  };
+};
+
+export const updateHeaderColor = (pageId, updatedHeaderColor) => {
+  return {
+    type: UPDATE_HEADER_COLOR,
+    payload: { pageId, updatedHeaderColor },
+  };
+};
+
+export const updateHeaderFontSize = (pageId, updatedHeaderSize) => {
+  return {
+    type: UPDATE_HEADER_SIZE,
+    payload: { pageId, updatedHeaderSize },
+  };
+};
+
+export const updateHeaderText = (pageId, updatedHeaderText) => {
+  return {
+    type: UPDATE_HEADER_TEXT,
+    payload: { pageId, updatedHeaderText },
   };
 };

@@ -1,51 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { RootStateOrAny, useSelector } from "react-redux";
 import {
   updateButtonFontSize,
   updateButtonFontColor,
   updateButtonBgColor,
 } from "../../redux/pageActions";
-import BackgroundComponent from "./BackgroundComponent";
+import BackgroundComponent from "./sub-components/BackgroundComponent";
+import FontSizeComponent from "./sub-components/FontSizeComponent";
 
 function ButtonComponent() {
-  const [fontSize, setFontSize] = useState(17);
-  const [isFontSizeValid, setIsFontSizeValid] = useState(true);
-
   const currPageIndex = useSelector(
     (state: RootStateOrAny) => state.currPageIndex
   );
   const currPage = useSelector((state: RootStateOrAny) =>
     currPageIndex !== -1 ? state.pages[currPageIndex] : null
   );
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (isFontSizeValid)
-      dispatch(updateButtonFontSize(currPageIndex, fontSize));
-  }, [isFontSizeValid, fontSize]);
-
-  useEffect(() => {
-    if (currPage === null) return;
-    setFontSize(currPage.buttonFontSize);
-    setIsFontSizeValid(true);
-  }, [currPageIndex, currPage]);
 
   return (
     <div className="button-style pad border-bottom">
       <div className="section-title">Button Design</div>
-      <div className="font-size edit-feature bottom-margin">
-        <div className="right-margin feature-text">Font size</div>
-        <input
-          className="font-size-display"
-          type="text"
-          pattern="[0-9]*"
-          value={fontSize}
-          onChange={(e) => {
-            setFontSize(Number(e.target.value));
-            setIsFontSizeValid(e.target.validity.valid);
-          }}
-        ></input>
-      </div>
+      <FontSizeComponent
+        actionFunction={updateButtonFontSize}
+        defualtSize={17}
+        sizeVarName="buttonFontSize"
+      />
       <div className="font-color edit-feature bottom-margin color-picker-row">
         <div className="right-margin feature-text">Color</div>
         <BackgroundComponent

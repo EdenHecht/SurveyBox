@@ -1,0 +1,28 @@
+.preview-window {
+  width: 700px;
+  height: 500px;
+  background: white;
+  margin: 37px auto;
+  border-radius: 7px;
+  position: relative;
+
+  .page-viewer-container {
+    padding: 0 20px;
+  }
+
+  .next-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 40px;
+    padding: 10px 45px;
+    border-radius: 30px;
+    border: none;
+    letter-spacing: 1px;
+    font-family: "Nunito";
+  }
+
+  .content {
+    padding: 4em 6em;
+  }
+}
