@@ -1,4 +1,7 @@
 export default interface IPage {
-    pageType: string;
-    background: string;
+  pageType: string;
+  background: string;
+  buttonFontSize: number;
+  buttonBackground: string;
+  buttonTextColor: string;
 }

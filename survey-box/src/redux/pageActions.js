@@ -4,6 +4,9 @@ import {
   UPDATE_CURR_PAGE,
   UPDATE_PAGE_ORDER,
   UPDATE_PAGE_BACKGROUND,
+  UPDATE_BUTTON_FONT_SIZE,
+  UPDATE_BUTTON_BG_COLOR,
+  UPDATE_BUTTON_FONT_COLOR,
 } from "./pageTypes";
 
 export const addPage = (pageType) => {
@@ -38,5 +41,25 @@ export const updatePageBackground = (pageId, updatedColor) => {
   return {
     type: UPDATE_PAGE_BACKGROUND,
     payload: { pageId, updatedColor },
+  };
+};
+
+export const updateButtonFontSize = (pageId, updatedFontSize) => {
+  return {
+    type: UPDATE_BUTTON_FONT_SIZE,
+    payload: { pageId, updatedFontSize },
+  };
+};
+export const updateButtonBgColor = (pageId, updatedBgColor) => {
+  return {
+    type: UPDATE_BUTTON_BG_COLOR,
+    payload: { pageId, updatedBgColor },
+  };
+};
+
+export const updateButtonFontColor = (pageId, updatedFontColor) => {
+  return {
+    type: UPDATE_BUTTON_FONT_COLOR,
+    payload: { pageId, updatedFontColor },
   };
 };

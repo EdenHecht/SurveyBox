@@ -4,6 +4,9 @@ import {
   UPDATE_CURR_PAGE,
   UPDATE_PAGE_ORDER,
   UPDATE_PAGE_BACKGROUND,
+  UPDATE_BUTTON_FONT_SIZE,
+  UPDATE_BUTTON_BG_COLOR,
+  UPDATE_BUTTON_FONT_COLOR,
 } from "./pageTypes";
 import buildPage from "../services/PageFactory";
 
@@ -14,6 +17,7 @@ const initialState = {
 
 const pageReducer = (state = initialState, action) => {
   let currPages;
+  let pagesCopy;
 
   switch (action.type) {
     case ADD_PAGE:
@@ -63,8 +67,35 @@ const pageReducer = (state = initialState, action) => {
       };
 
     case UPDATE_PAGE_BACKGROUND:
-      let pagesCopy = [...state.pages];
+      pagesCopy = [...state.pages];
       pagesCopy[action.payload.pageId].background = action.payload.updatedColor;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_BUTTON_FONT_SIZE:
+      pagesCopy = [...state.pages];
+      pagesCopy[action.payload.pageId].buttonFontSize =
+        action.payload.updatedFontSize;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_BUTTON_BG_COLOR:
+      pagesCopy = [...state.pages];
+      pagesCopy[action.payload.pageId].buttonBackground =
+        action.payload.updatedBgColor;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_BUTTON_FONT_COLOR:
+      pagesCopy = [...state.pages];
+      pagesCopy[action.payload.pageId].buttonTextColor =
+        action.payload.updatedFontColor;
       return {
         ...state,
         pages: pagesCopy,
