@@ -12,16 +12,22 @@ export default class GoodbyePage implements IPage, IStatementPage {
   headerFontSize: number;
   headerColor: string;
   headerText: string;
+  subHeaderFontSize: number;
+  subHeaderColor: string;
+  subHeaderText: string;
 
   constructor(id: number) {
     this.pageType = GOODBYE_PAGE;
     this.id = id;
     this.background = "#ffffff";
     this.buttonFontSize = 17;
-    this.buttonBackground = "#6d7175";
+    this.buttonBackground = "#437B83";
     this.buttonTextColor = "#ffffff";
-    this.headerFontSize = 24;
-    this.headerColor = "#6d7175";
+    this.headerFontSize = 50;
+    this.headerColor = "#dabe49";
     this.headerText = "GoodBye!";
+    this.subHeaderFontSize = 25;
+    this.subHeaderColor = "#234e52";
+    this.subHeaderText = "Thank you for taking the time to answer my survey!";
   }
 }

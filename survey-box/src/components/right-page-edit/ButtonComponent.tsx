@@ -20,7 +20,7 @@ function ButtonComponent() {
       <div className="section-title">Button Design</div>
       <FontSizeComponent
         actionFunction={updateButtonFontSize}
-        defualtSize={17}
+        defualtSize={currPage ? currPage.buttonFontSize : 17}
         sizeVarName="buttonFontSize"
       />
       <div className="font-color edit-feature bottom-margin color-picker-row">

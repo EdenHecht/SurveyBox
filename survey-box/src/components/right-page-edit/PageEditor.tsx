@@ -5,6 +5,7 @@ import StatmentStyleOptions from "./statment-components/StatmentStyleOptions";
 import QuestionStyleOptions from "./question-components/QuestionStyleOptions";
 import ButtonComponent from "./ButtonComponent";
 import PageBgComponent from "./PageBgComponent";
+import { GOODBYE_PAGE } from "../../services/pageConstants";
 
 function PageEditor() {
   const currPageIndex = useSelector(
@@ -25,7 +26,7 @@ function PageEditor() {
           ) : (
             <StatmentStyleOptions />
           )}
-          <ButtonComponent />
+          {currPage.pageType !== GOODBYE_PAGE && <ButtonComponent />}
         </>
       )}
     </div>

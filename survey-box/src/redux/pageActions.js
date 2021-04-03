@@ -10,6 +10,9 @@ import {
   UPDATE_HEADER_COLOR,
   UPDATE_HEADER_SIZE,
   UPDATE_HEADER_TEXT,
+  UPDATE_SUBHEADER_COLOR,
+  UPDATE_SUBHEADER_SIZE,
+  UPDATE_SUBHEADER_TEXT,
 } from "./pageTypes";
 
 export const addPage = (pageType) => {
@@ -85,5 +88,26 @@ export const updateHeaderText = (pageId, updatedHeaderText) => {
   return {
     type: UPDATE_HEADER_TEXT,
     payload: { pageId, updatedHeaderText },
+  };
+};
+
+export const updateSubHeaderColor = (pageId, updatedSubHeaderColor) => {
+  return {
+    type: UPDATE_SUBHEADER_COLOR,
+    payload: { pageId, updatedSubHeaderColor },
+  };
+};
+
+export const updateSubHeaderSize = (pageId, updatedSubHeaderSize) => {
+  return {
+    type: UPDATE_SUBHEADER_SIZE,
+    payload: { pageId, updatedSubHeaderSize },
+  };
+};
+
+export const updateSubHeaderText = (pageId, updatedSubHeaderText) => {
+  return {
+    type: UPDATE_SUBHEADER_TEXT,
+    payload: { pageId, updatedSubHeaderText },
   };
 };

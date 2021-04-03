@@ -1,8 +1,9 @@
 import IPage from "./IPage";
 import { TEXT_FIELD_PAGE, TEXT_FIELD } from "../services/pageConstants";
 import IQuestion from "./IQuestion";
+import INextClick from "./INextClick";
 
-export default class TextFieldPage implements IPage, IQuestion {
+export default class TextFieldPage implements IPage, IQuestion, INextClick {
   pageType: string;
   questionType: string;
   id: number;

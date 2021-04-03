@@ -7,6 +7,7 @@ import {
   updateHeaderText,
 } from "../../../redux/pageActions";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+
 function HeaderDesignComponent() {
   const currPageIndex = useSelector(
     (state: RootStateOrAny) => state.currPageIndex
@@ -22,7 +23,7 @@ function HeaderDesignComponent() {
       <div className="section-title">Header Design</div>
       <FontSizeComponent
         actionFunction={updateHeaderFontSize}
-        defualtSize={30}
+        defualtSize={currPage ? currPage.headerFontSize : 40}
         sizeVarName="headerFontSize"
       />
       <div className="font-color edit-feature bottom-margin color-picker-row">
@@ -38,6 +39,7 @@ function HeaderDesignComponent() {
         <input
           type="text"
           name="question-text"
+          placeholder={currPage.headerText}
           onChange={(e) =>
             dispatch(updateHeaderText(currPage.id, e.target.value))
           }

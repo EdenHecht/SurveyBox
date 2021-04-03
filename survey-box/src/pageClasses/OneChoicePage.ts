@@ -1,8 +1,9 @@
 import IPage from "./IPage";
 import { ONE_CHOICE_PAGE, ONE_CHOICE } from "../services/pageConstants";
 import IQuestion from "./IQuestion";
+import INextClick from "./INextClick";
 
-export default class OneChoicePage implements IPage, IQuestion {
+export default class OneChoicePage implements IPage, IQuestion, INextClick {
   pageType: string;
   questionType: string;
   id: number;

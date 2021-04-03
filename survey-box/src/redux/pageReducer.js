@@ -10,6 +10,9 @@ import {
   UPDATE_HEADER_COLOR,
   UPDATE_HEADER_SIZE,
   UPDATE_HEADER_TEXT,
+  UPDATE_SUBHEADER_COLOR,
+  UPDATE_SUBHEADER_SIZE,
+  UPDATE_SUBHEADER_TEXT,
 } from "./pageTypes";
 import buildPage from "../services/PageFactory";
 
@@ -45,7 +48,10 @@ const pageReducer = (state = initialState, action) => {
 
       if (removedIndex === 0) {
         currPages = currPages.slice(1);
-        updatedCurrPageIndex = 0;
+
+        //if the deleted page is the first but not the last page
+        if (currPages.length !== 0 && updatedCurrPageIndex === -1)
+          updatedCurrPageIndex = 0;
       } else
         currPages = currPages
           .slice(0, removedIndex)
@@ -142,6 +148,41 @@ const pageReducer = (state = initialState, action) => {
         .map((page) => page.id)
         .indexOf(action.payload.pageId);
       pagesCopy[pageIndex].headerText = action.payload.updatedHeaderText;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_SUBHEADER_COLOR:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].subHeaderColor =
+        action.payload.updatedSubHeaderColor;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_SUBHEADER_SIZE:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].subHeaderFontSize =
+        action.payload.updatedSubHeaderSize;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_SUBHEADER_TEXT:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].subHeaderText = action.payload.updatedSubHeaderText;
       return {
         ...state,
         pages: pagesCopy,

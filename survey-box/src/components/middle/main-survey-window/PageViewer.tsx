@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
 import "./PageViewer.scss";
-import IStatementPage from "../../../pageClasses/IStatementPage";
+import { GOODBYE_PAGE } from "../../../services/pageConstants";
 
 function PageViewer() {
   const currPageIndex = useSelector(
@@ -12,8 +12,11 @@ function PageViewer() {
   const [viewerStyle, setViewerStyle] = useState({});
   const [buttonStyle, setButtonStyle] = useState({});
   const [headerStyle, setHeaderStyle] = useState({});
+  const [subHeaderStyle, setSubHeaderStyle] = useState({});
   const headerText =
-    currPageIndex !== -1 ? pages[currPageIndex].headerText : null;
+    pages.length !== 0 && currPageIndex !== -1
+      ? pages[currPageIndex].headerText
+      : null;
 
   useEffect(() => {
     if (currPage === null) return;
@@ -29,19 +32,34 @@ function PageViewer() {
       fontSize: currPage.headerFontSize,
       color: currPage.headerColor,
     });
-  }, [pages]);
+    setSubHeaderStyle({
+      fontSize: currPage.subHeaderFontSize,
+      color: currPage.subHeaderColor,
+    });
+  }, [pages, currPage, currPageIndex]);
 
   return (
     <div className="page-viewer-container">
       <div className="preview-window" style={viewerStyle}>
         {currPage && (
           <div className="content">
-            <div className="main-line" style={headerStyle}>
-              {headerText !== undefined ? headerText : "nothing"}
-            </div>
-            <button className="next-button" style={buttonStyle}>
-              Next
-            </button>
+            {headerText ? (
+              <div>
+                <div className="header" style={headerStyle}>
+                  {headerText}
+                </div>
+                <div className="sub-header" style={subHeaderStyle}>
+                  {currPage.subHeaderText}
+                </div>
+              </div>
+            ) : (
+              "nothing"
+            )}
+            {currPage.pageType !== GOODBYE_PAGE && (
+              <button className="next-button" style={buttonStyle}>
+                Next
+              </button>
+            )}
           </div>
         )}
       </div>
