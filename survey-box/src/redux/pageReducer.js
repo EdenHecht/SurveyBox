@@ -13,12 +13,20 @@ import {
   UPDATE_SUBHEADER_COLOR,
   UPDATE_SUBHEADER_SIZE,
   UPDATE_SUBHEADER_TEXT,
+  UPDATE_QUESTION_COLOR,
+  UPDATE_QUESTION_SIZE,
+  UPDATE_QUESTION_TEXT,
+  UPDATE_ANSWERS_COLOR,
+  UPDATE_ANSWERS_SIZE,
+  UPDATE_SURVEY_NAME,
+  UPDATE_PAGE_NAME,
 } from "./pageTypes";
 import buildPage from "../services/PageFactory";
 
 const initialState = {
   pages: [],
   currPageIndex: -1,
+  surveyName: "Survey Name",
 };
 
 const pageReducer = (state = initialState, action) => {
@@ -183,6 +191,79 @@ const pageReducer = (state = initialState, action) => {
         .map((page) => page.id)
         .indexOf(action.payload.pageId);
       pagesCopy[pageIndex].subHeaderText = action.payload.updatedSubHeaderText;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_QUESTION_COLOR:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].questionColor = action.payload.updatedQuestionColor;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_QUESTION_SIZE:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].questionFontSize =
+        action.payload.updatedQuestionSize;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_QUESTION_TEXT:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].questionText = action.payload.updatedQuestionText;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_ANSWERS_COLOR:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].answersColor = action.payload.updatedAnswersColor;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_ANSWERS_SIZE:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].answersFontSize = action.payload.updatedAnswersSize;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_SURVEY_NAME:
+      return {
+        ...state,
+        surveyName: action.payload,
+      };
+
+    case UPDATE_PAGE_NAME:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].pageName = action.payload.updatedPageName;
       return {
         ...state,
         pages: pagesCopy,

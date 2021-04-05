@@ -5,6 +5,7 @@ import { GOODBYE_PAGE } from "../services/pageConstants";
 export default class GoodbyePage implements IPage, IStatementPage {
   pageType: string;
   id: number;
+  pageName: string;
   background: string;
   headerFontSize: number;
   headerColor: string;
@@ -16,6 +17,7 @@ export default class GoodbyePage implements IPage, IStatementPage {
   constructor(id: number) {
     this.pageType = GOODBYE_PAGE;
     this.id = id;
+    this.pageName = `Page ${id}`;
     this.background = "#ffffff";
     this.headerFontSize = 50;
     this.headerColor = "#dabe49";

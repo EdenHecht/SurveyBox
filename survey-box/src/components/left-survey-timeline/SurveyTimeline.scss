@@ -8,12 +8,17 @@
   overflow-x: auto;
 }
 
+.survey-name-input {
+  border: none;
+}
+
 .survey-name {
   color: #222831;
   font-size: 21px;
   font-weight: 400;
   border-bottom: 3px solid #e5e5e5;
   padding: 25px;
+  font-family: "Nunito";
 }
 
 .page-example {
@@ -67,4 +72,8 @@
 .single-page-container {
   display: flex;
   margin-bottom: 20px;
+}
+
+.survey-name-input:focus {
+  outline: none;
 }

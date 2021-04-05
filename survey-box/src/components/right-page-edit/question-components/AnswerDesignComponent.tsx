@@ -1,17 +1,35 @@
 import React from "react";
+import { RootStateOrAny, useSelector } from "react-redux";
+import BackgroundComponent from "../sub-components/BackgroundComponent";
+import FontSizeComponent from "../sub-components/FontSizeComponent";
+import {
+  updateAnswersColor,
+  updateAnswersSize,
+} from "../../../redux/pageActions";
 
 function AnswerDesignComponent() {
+  const currPageIndex = useSelector(
+    (state: RootStateOrAny) => state.currPageIndex
+  );
+  const currPage = useSelector((state: RootStateOrAny) =>
+    currPageIndex !== -1 ? state.pages[currPageIndex] : null
+  );
+
   return (
     <div className="answer-style pad border-bottom">
       <div className="section-title">Answer Design</div>
-      <div className="font-size edit-feature bottom-margin">
-        <div className="right-margin feature-text">Font size</div>
-        <div className="font-size-display">15</div>
-      </div>
-      <div className="font-color edit-feature bottom-margin">
+      <FontSizeComponent
+        actionFunction={updateAnswersSize}
+        defualtSize={currPage ? currPage.answersFontSize : 25}
+        sizeVarName="answersFontSize"
+      />
+      <div className="font-color edit-feature bottom-margin color-picker-row">
         <div className="right-margin feature-text">Color</div>
-        <div className="sample"></div>
-        <div className="hex-number feature-text"> 000000</div>
+        <BackgroundComponent
+          actionFunction={updateAnswersColor}
+          defualtColor={currPage ? currPage.answersColor : "#000000"}
+          colorVarName="answersColor"
+        />
       </div>
       <div className="answer-text edit-feature bottom-margin">
         <div className="right-margin feature-text">Text 1</div>

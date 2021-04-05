@@ -13,6 +13,8 @@ function PageViewer() {
   const [buttonStyle, setButtonStyle] = useState({});
   const [headerStyle, setHeaderStyle] = useState({});
   const [subHeaderStyle, setSubHeaderStyle] = useState({});
+  const [questionStyle, setQuestionStyle] = useState({});
+
   const headerText =
     pages.length !== 0 && currPageIndex !== -1
       ? pages[currPageIndex].headerText
@@ -36,6 +38,10 @@ function PageViewer() {
       fontSize: currPage.subHeaderFontSize,
       color: currPage.subHeaderColor,
     });
+    setQuestionStyle({
+      fontSize: currPage.questionFontSize,
+      color: currPage.questionColor,
+    });
   }, [pages, currPage, currPageIndex]);
 
   return (
@@ -53,7 +59,11 @@ function PageViewer() {
                 </div>
               </div>
             ) : (
-              "nothing"
+              <div>
+                <div className="question" style={questionStyle}>
+                  {currPage.questionText}
+                </div>
+              </div>
             )}
             {currPage.pageType !== GOODBYE_PAGE && (
               <button className="next-button" style={buttonStyle}>

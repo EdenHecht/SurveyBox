@@ -6,6 +6,7 @@ import INextClick from "./INextClick";
 export default class WelcomePage implements IPage, IStatementPage, INextClick {
   pageType: string;
   id: number;
+  pageName: string;
   background: string;
   buttonFontSize: number;
   buttonBackground: string;
@@ -20,6 +21,7 @@ export default class WelcomePage implements IPage, IStatementPage, INextClick {
   constructor(id: number) {
     this.pageType = WELCOME_PAGE;
     this.id = id;
+    this.pageName = `Page ${id}`;
     this.background = "#ffffff";
     this.buttonFontSize = 17;
     this.buttonBackground = "#437B83";

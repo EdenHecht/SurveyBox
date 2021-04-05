@@ -8,6 +8,11 @@
   overflow-x: auto;
 }
 
+.page-name-input {
+  border: none;
+  font-family: "Nunito";
+}
+
 .border-bottom {
   border-bottom: 3px solid #e5e5e5;
 }
@@ -97,5 +102,9 @@
 }
 
 .sample:focus {
+  outline: none;
+}
+
+.page-name-input:focus {
   outline: none;
 }

@@ -13,6 +13,13 @@ import {
   UPDATE_SUBHEADER_COLOR,
   UPDATE_SUBHEADER_SIZE,
   UPDATE_SUBHEADER_TEXT,
+  UPDATE_QUESTION_COLOR,
+  UPDATE_QUESTION_SIZE,
+  UPDATE_QUESTION_TEXT,
+  UPDATE_ANSWERS_COLOR,
+  UPDATE_ANSWERS_SIZE,
+  UPDATE_SURVEY_NAME,
+  UPDATE_PAGE_NAME,
 } from "./pageTypes";
 
 export const addPage = (pageType) => {
@@ -109,5 +116,54 @@ export const updateSubHeaderText = (pageId, updatedSubHeaderText) => {
   return {
     type: UPDATE_SUBHEADER_TEXT,
     payload: { pageId, updatedSubHeaderText },
+  };
+};
+
+export const updateQuestionColor = (pageId, updatedQuestionColor) => {
+  return {
+    type: UPDATE_QUESTION_COLOR,
+    payload: { pageId, updatedQuestionColor },
+  };
+};
+
+export const updateQuestionSize = (pageId, updatedQuestionSize) => {
+  return {
+    type: UPDATE_QUESTION_SIZE,
+    payload: { pageId, updatedQuestionSize },
+  };
+};
+
+export const updateQuestionText = (pageId, updatedQuestionText) => {
+  return {
+    type: UPDATE_QUESTION_TEXT,
+    payload: { pageId, updatedQuestionText },
+  };
+};
+
+export const updateAnswersColor = (pageId, updatedAnswersColor) => {
+  return {
+    type: UPDATE_ANSWERS_COLOR,
+    payload: { pageId, updatedAnswersColor },
+  };
+};
+
+export const updateAnswersSize = (pageId, updatedAnswersSize) => {
+  return {
+    type: UPDATE_ANSWERS_SIZE,
+    payload: { pageId, updatedAnswersSize },
+  };
+};
+
+export const updateSurveyName = (updatedSurveyName) => {
+  return {
+    type: UPDATE_SURVEY_NAME,
+    payload: updatedSurveyName,
+  };
+};
+
+export const updatePageName = (pageId, updatedPageName) => {
+  return {
+    type: UPDATE_PAGE_NAME,
+    payload: { pageId, updatedPageName },
   };
 };
