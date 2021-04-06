@@ -2,6 +2,7 @@ import React from "react";
 import { RootStateOrAny, useSelector } from "react-redux";
 import BackgroundComponent from "../sub-components/BackgroundComponent";
 import FontSizeComponent from "../sub-components/FontSizeComponent";
+import QuestionTextComponent from "./QuestionTextComponent";
 import {
   updateAnswersColor,
   updateAnswersSize,
@@ -31,11 +32,7 @@ function AnswerDesignComponent() {
           colorVarName="answersColor"
         />
       </div>
-      <div className="answer-text edit-feature bottom-margin">
-        <div className="right-margin feature-text">Text 1</div>
-        <input type="text" name="answer-text" className="answer-text-field" />
-      </div>
-      <button className="add-answer-text">+</button>
+      <QuestionTextComponent questionType={currPage.questionType} />
     </div>
   );
 }

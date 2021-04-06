@@ -1,6 +1,7 @@
 import React from "react";
 import FontSizeComponent from "../sub-components/FontSizeComponent";
 import BackgroundComponent from "../sub-components/BackgroundComponent";
+import TextComponent from "../sub-components/TextComponent";
 import {
   updateSubHeaderColor,
   updateSubHeaderSize,
@@ -33,16 +34,11 @@ function SubHeaderDesignComponent() {
           colorVarName="subHeaderColor"
         />
       </div>
-      <div className="answer-text edit-feature bottom-margin">
+      <div className="edit-feature bottom-margin">
         <div className="right-margin feature-text">Text 1</div>
-        <input
-          type="text"
-          name="answer-text"
-          className="answer-text-field"
-          placeholder={currPage.subHeaderText}
-          onChange={(e) =>
-            dispatch(updateSubHeaderText(currPage.id, e.target.value))
-          }
+        <TextComponent
+          actionFunction={updateSubHeaderText}
+          textVarName="subHeaderText"
         />
       </div>
     </div>

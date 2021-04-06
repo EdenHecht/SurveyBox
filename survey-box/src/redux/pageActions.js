@@ -18,6 +18,8 @@ import {
   UPDATE_QUESTION_TEXT,
   UPDATE_ANSWERS_COLOR,
   UPDATE_ANSWERS_SIZE,
+  UPDATE_ANSWERS_TEXT,
+  ADD_NEW_ANSWER,
   UPDATE_SURVEY_NAME,
   UPDATE_PAGE_NAME,
 } from "./pageTypes";
@@ -165,5 +167,19 @@ export const updatePageName = (pageId, updatedPageName) => {
   return {
     type: UPDATE_PAGE_NAME,
     payload: { pageId, updatedPageName },
+  };
+};
+
+export const updateAnswerText = (pageId, answerIndex, updatedAnswer) => {
+  return {
+    type: UPDATE_ANSWERS_TEXT,
+    payload: { pageId, answerIndex, updatedAnswer },
+  };
+};
+
+export const addNewAnswer = (pageId) => {
+  return {
+    type: ADD_NEW_ANSWER,
+    payload: { pageId },
   };
 };

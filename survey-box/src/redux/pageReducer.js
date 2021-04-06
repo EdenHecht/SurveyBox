@@ -18,6 +18,8 @@ import {
   UPDATE_QUESTION_TEXT,
   UPDATE_ANSWERS_COLOR,
   UPDATE_ANSWERS_SIZE,
+  UPDATE_ANSWERS_TEXT,
+  ADD_NEW_ANSWER,
   UPDATE_SURVEY_NAME,
   UPDATE_PAGE_NAME,
 } from "./pageTypes";
@@ -247,6 +249,32 @@ const pageReducer = (state = initialState, action) => {
         .map((page) => page.id)
         .indexOf(action.payload.pageId);
       pagesCopy[pageIndex].answersFontSize = action.payload.updatedAnswersSize;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case UPDATE_ANSWERS_TEXT:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      pagesCopy[pageIndex].answersText[action.payload.answerIndex] =
+        action.payload.updatedAnswer;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case ADD_NEW_ANSWER:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      const newAnswerIndex = pagesCopy[pageIndex].answersText.length;
+      pagesCopy[pageIndex].answersText[newAnswerIndex] = `Option ${
+        newAnswerIndex + 1
+      }`;
       return {
         ...state,
         pages: pagesCopy,

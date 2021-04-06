@@ -7,6 +7,7 @@ import {
   updateHeaderText,
 } from "../../../redux/pageActions";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import TextComponent from "../sub-components/TextComponent";
 
 function HeaderDesignComponent() {
   const currPageIndex = useSelector(
@@ -36,13 +37,9 @@ function HeaderDesignComponent() {
       </div>
       <div className="question-text edit-feature bottom-margin">
         <div className="right-margin feature-text">Text</div>
-        <input
-          type="text"
-          name="question-text"
-          placeholder={currPage.headerText}
-          onChange={(e) =>
-            dispatch(updateHeaderText(currPage.id, e.target.value))
-          }
+        <TextComponent
+          actionFunction={updateHeaderText}
+          textVarName="headerText"
         />
       </div>
     </div>

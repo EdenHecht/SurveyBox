@@ -84,6 +84,7 @@
   line-height: 0;
   color: #f9f9f9;
   border: none;
+  cursor: pointer;
 }
 
 .answer-text-field {

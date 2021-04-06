@@ -7,6 +7,7 @@ import {
   updateQuestionSize,
   updateQuestionText,
 } from "../../../redux/pageActions";
+import TextComponent from "../sub-components/TextComponent";
 
 function QuestionDesignComponent() {
   const currPageIndex = useSelector(
@@ -35,13 +36,9 @@ function QuestionDesignComponent() {
       </div>
       <div className="question-text edit-feature bottom-margin">
         <div className="right-margin feature-text">Text</div>
-        <input
-          type="text"
-          name="question-text"
-          placeholder={currPage.questionText}
-          onChange={(e) =>
-            dispatch(updateQuestionText(currPage.id, e.target.value))
-          }
+        <TextComponent
+          actionFunction={updateQuestionText}
+          textVarName="questionText"
         />
       </div>
     </div>

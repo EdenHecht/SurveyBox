@@ -1,5 +1,5 @@
 import IPage from "./IPage";
-import { TEXT_AREA_PAGE, TEXT_AREA } from "../services/pageConstants";
+import { TEXT_AREA_PAGE, TEXT } from "../services/pageConstants";
 import IQuestion from "./IQuestion";
 import INextClick from "./INextClick";
 
@@ -21,7 +21,7 @@ export default class TextAreaPage implements IPage, IQuestion, INextClick {
 
   constructor(id: number) {
     this.pageType = TEXT_AREA_PAGE;
-    this.questionType = TEXT_AREA;
+    this.questionType = TEXT;
     this.id = id;
     this.pageName = `Page ${id}`;
     this.background = "#ffffff";
@@ -33,6 +33,6 @@ export default class TextAreaPage implements IPage, IQuestion, INextClick {
     this.questionText = "What's your question?";
     this.answersColor = "#6d7175";
     this.answersFontSize = 25;
-    this.answersText = new Array<string>();
+    this.answersText = new Array<string>("Write your answer here");
   }
 }
