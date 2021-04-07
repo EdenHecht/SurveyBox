@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
 import "./PageViewer.scss";
 import { GOODBYE_PAGE } from "../../../services/pageConstants";
+import QuestionTypePreview from "./QuestionTypePreview";
 
 function PageViewer() {
   const currPageIndex = useSelector(
@@ -19,6 +20,9 @@ function PageViewer() {
     pages.length !== 0 && currPageIndex !== -1
       ? pages[currPageIndex].headerText
       : null;
+
+  const currPageAnswers =
+    pages.length !== 0 && currPageIndex !== -1 ? currPage.answersText : null;
 
   useEffect(() => {
     if (currPage === null) return;
@@ -63,6 +67,7 @@ function PageViewer() {
                 <div className="question" style={questionStyle}>
                   {currPage.questionText}
                 </div>
+                <QuestionTypePreview pageType={currPage.pageType} />
               </div>
             )}
             {currPage.pageType !== GOODBYE_PAGE && (

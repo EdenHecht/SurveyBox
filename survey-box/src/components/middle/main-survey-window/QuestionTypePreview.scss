@@ -1,0 +1,23 @@
+.answer-container {
+  margin-top: 35px;
+  display: inline-grid;
+
+  .preview-answer {
+    margin-bottom: 10px;
+    font-weight: 300;
+  }
+
+  .answer-check-option {
+    margin-right: 17px;
+  }
+
+  .text-area-preview {
+    height: 9em;
+    width: 17em;
+  }
+
+  .text-preview {
+    font-family: "Nunito";
+    font-weight: 300;
+  }
+}

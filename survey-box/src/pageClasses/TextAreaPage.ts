@@ -31,8 +31,8 @@ export default class TextAreaPage implements IPage, IQuestion, INextClick {
     this.questionColor = "#6d7175";
     this.questionFontSize = 35;
     this.questionText = "What's your question?";
-    this.answersColor = "#6d7175";
-    this.answersFontSize = 25;
+    this.answersColor = "#262727";
+    this.answersFontSize = 21;
     this.answersText = new Array<string>("Write your answer here");
   }
 }

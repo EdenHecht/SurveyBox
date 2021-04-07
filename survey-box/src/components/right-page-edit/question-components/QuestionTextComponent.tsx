@@ -16,12 +16,7 @@ function QuestionTextComponent(props: any) {
   const currPageAnswersLength = useSelector(
     (state: RootStateOrAny) => currPage.answersText.length
   );
-  const [answersLength, setAnswersLength] = useState(currPageAnswersLength);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    setAnswersLength(currPageAnswersLength);
-  }, [currPageAnswersLength, currPage]);
 
   return (
     <>

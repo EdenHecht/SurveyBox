@@ -4,4 +4,29 @@
   .answer-row {
     display: flex;
   }
+
+  .answer-row:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.add-answer-text:focus {
+  outline: none;
+}
+
+.add-answer-text {
+  width: 22px;
+  height: 22px;
+  background: #d9a04f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-size: 20px;
+  padding: 0;
+  line-height: 0;
+  color: #f9f9f9;
+  border: none;
+  cursor: pointer;
 }
