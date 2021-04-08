@@ -10,8 +10,8 @@ You are more then welcome to red more about the project in the specification doc
 
 
 I divided this project into 3 parts:
-1.	The first part is to design the UI and implement it with react and css, without any functionality.
-2.	The second part is to make the UI functional
+1.	The first part is to design the UI and implement it with react and css, without any functionality (1-3).
+2.	The second part is to make the UI functional (4-14)
 3.	The third part is to build a small server for the users to be able to edit, view and vote at all times.
 
 #### Milestones :
@@ -31,7 +31,8 @@ I divided this project into 3 parts:
 10.	Separate the edit bar to individual component- statements/questions and display them dynamically
 11.	Make the background button work, display the changes in the preview window and update the state accordingly
 12.	Make the "next" button edit functionality, display the changes in the preview window and update the state accordingly
+13.	Make the statement pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
 
 ###### next milestone:
-Make the statement pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
-	
+Make the question pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
+
