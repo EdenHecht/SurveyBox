@@ -1,6 +1,16 @@
 .answer-container {
   margin-top: 35px;
-  display: inline-grid;
+  display: block;
+
+  .answer-grid {
+    display: inline-grid;
+    grid-gap: 10px;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(6, 40px);
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-auto-columns: 140px;
+    grid-auto-rows: 71px;
+  }
 
   .preview-answer {
     margin-bottom: 10px;
@@ -14,10 +24,22 @@
   .text-area-preview {
     height: 9em;
     width: 17em;
+    background: #ffffff00;
+    border: 0.5px solid #dedede;
+    border-radius: 12px;
+    padding: 5px 20px;
   }
 
   .text-preview {
     font-family: "Nunito";
     font-weight: 300;
+  }
+
+  .text-field-preview {
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    border-bottom: 0.5px solid #808da0;
+    padding-bottom: 4px;
+    width: 90%;
   }
 }

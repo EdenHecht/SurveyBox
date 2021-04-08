@@ -15,7 +15,7 @@ function TextComponent(props: any) {
     <input
       type="text"
       name="question-text"
-      className="answer-text-field"
+      className="question-text-field"
       placeholder={currPage[textVarName]}
       onChange={(e) => dispatch(actionFunction(currPage.id, e.target.value))}
     />

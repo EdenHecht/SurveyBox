@@ -57,7 +57,7 @@
 }
 
 .font-size-display {
-  width: 25px;
+  width: 32px;
   height: 20px;
   font-size: 13px;
   border: 1px solid #222831;
@@ -66,11 +66,15 @@
   justify-content: center;
 }
 
+.font-size-display:focus {
+  outline: none;
+}
+
 .bottom-margin {
   margin-bottom: 10px;
 }
 
-.answer-text-field {
+.question-text-field {
   width: 150px;
 }
 

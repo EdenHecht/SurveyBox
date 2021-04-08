@@ -30,3 +30,34 @@
   border: none;
   cursor: pointer;
 }
+
+.delete-answer-btn {
+  width: 17px;
+  height: 17px;
+  background: #d63a3a;
+  border-radius: 50%;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 900;
+  align-self: center;
+}
+
+.delete-answer-btn:focus {
+  outline: none;
+}
+
+.answer-text-field {
+  width: 130px;
+  margin-right: 10px;
+}
+
+.answer-text-field:focus {
+  outline: none;
+}

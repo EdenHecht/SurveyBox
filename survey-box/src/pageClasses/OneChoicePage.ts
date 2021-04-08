@@ -26,9 +26,9 @@ export default class OneChoicePage implements IPage, IQuestion, INextClick {
     this.pageName = `Page ${id}`;
     this.background = "#ffffff";
     this.buttonFontSize = 17;
-    this.buttonBackground = "#6d7175";
+    this.buttonBackground = "#d4b207";
     this.buttonTextColor = "#ffffff";
-    this.questionColor = "#6d7175";
+    this.questionColor = "#437b83";
     this.questionFontSize = 35;
     this.questionText = "What's your question?";
     this.answersColor = "#262727";

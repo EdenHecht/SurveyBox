@@ -42,8 +42,9 @@ function QuestionTypePreview(props: any) {
   const renderQuestionType = () => {
     switch (pageType) {
       case ONE_CHOICE_PAGE:
-        return currPageAnswers
-          ? currPageAnswers.map((answer: string, index: number) => {
+        return currPageAnswers ? (
+          <div className="answer-grid">
+            {currPageAnswers.map((answer: string, index: number) => {
               return (
                 <label
                   className="preview-answer"
@@ -60,12 +61,14 @@ function QuestionTypePreview(props: any) {
                   {answer}
                 </label>
               );
-            })
-          : null;
+            })}
+          </div>
+        ) : null;
 
       case MULTI_CHOICE_PAGE:
-        return currPageAnswers
-          ? currPageAnswers.map((answer: string, index: number) => {
+        return currPageAnswers ? (
+          <div className="answer-grid">
+            {currPageAnswers.map((answer: string, index: number) => {
               return (
                 <label
                   className="preview-answer"
@@ -82,8 +85,9 @@ function QuestionTypePreview(props: any) {
                   {answer}
                 </label>
               );
-            })
-          : null;
+            })}
+          </div>
+        ) : null;
 
       case TEXT_AREA_PAGE:
         return (
@@ -102,7 +106,7 @@ function QuestionTypePreview(props: any) {
         return (
           <input
             type="text"
-            className="text-preview"
+            className="text-field-preview text-preview"
             style={answerStyle}
             value={textAnswerPreview}
             onChange={(e) => setTextAnswerPreview(e.target.value)}

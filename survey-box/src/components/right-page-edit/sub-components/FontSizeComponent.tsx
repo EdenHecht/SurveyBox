@@ -31,8 +31,7 @@ function FontSizeComponent(props: any) {
       <div className="right-margin feature-text">Font size</div>
       <input
         className="font-size-display"
-        type="text"
-        pattern="[0-9]*"
+        type="number"
         value={fontSize}
         onChange={(e) => {
           setFontSize(Number(e.target.value));

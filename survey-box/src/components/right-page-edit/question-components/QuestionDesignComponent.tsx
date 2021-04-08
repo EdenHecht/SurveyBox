@@ -16,7 +16,6 @@ function QuestionDesignComponent() {
   const currPage = useSelector((state: RootStateOrAny) =>
     currPageIndex !== -1 ? state.pages[currPageIndex] : null
   );
-  const dispatch = useDispatch();
 
   return (
     <div className="question-style pad border-bottom">

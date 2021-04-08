@@ -22,6 +22,7 @@ import {
   ADD_NEW_ANSWER,
   UPDATE_SURVEY_NAME,
   UPDATE_PAGE_NAME,
+  DELETE_PAGE_ANSWER,
 } from "./pageTypes";
 import buildPage from "../services/PageFactory";
 
@@ -292,6 +293,18 @@ const pageReducer = (state = initialState, action) => {
         .map((page) => page.id)
         .indexOf(action.payload.pageId);
       pagesCopy[pageIndex].pageName = action.payload.updatedPageName;
+      return {
+        ...state,
+        pages: pagesCopy,
+      };
+
+    case DELETE_PAGE_ANSWER:
+      pagesCopy = [...state.pages];
+      pageIndex = pagesCopy
+        .map((page) => page.id)
+        .indexOf(action.payload.pageId);
+      const deleteIndex = action.payload.answerIndex;
+      pagesCopy[pageIndex].answersText.splice(deleteIndex, 1);
       return {
         ...state,
         pages: pagesCopy,

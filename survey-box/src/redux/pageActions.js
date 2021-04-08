@@ -22,6 +22,7 @@ import {
   ADD_NEW_ANSWER,
   UPDATE_SURVEY_NAME,
   UPDATE_PAGE_NAME,
+  DELETE_PAGE_ANSWER,
 } from "./pageTypes";
 
 export const addPage = (pageType) => {
@@ -181,5 +182,12 @@ export const addNewAnswer = (pageId) => {
   return {
     type: ADD_NEW_ANSWER,
     payload: { pageId },
+  };
+};
+
+export const deleteAnswerOption = (pageId, answerIndex) => {
+  return {
+    type: DELETE_PAGE_ANSWER,
+    payload: { pageId, answerIndex },
   };
 };
