@@ -32,7 +32,7 @@ I divided this project into 3 parts:
 11.	Make the background button work, display the changes in the preview window and update the state accordingly
 12.	Make the "next" button edit functionality, display the changes in the preview window and update the state accordingly
 13.	Make the statement pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
+14. Make the question pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
 
 ###### next milestone:
-Make the question pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
-
+Decide what language to build the server, learn it and build a small server (one URL server at first, without data base)
