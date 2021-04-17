@@ -1,12 +1,11 @@
-import React from "react";
-import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { RootStateOrAny, useSelector } from "react-redux";
 import BackgroundComponent from "../sub-components/BackgroundComponent";
 import FontSizeComponent from "../sub-components/FontSizeComponent";
 import {
   updateQuestionColor,
   updateQuestionSize,
   updateQuestionText,
-} from "../../../redux/pageActions";
+} from "../../../redux/actions/styleActions";
 import TextComponent from "../sub-components/TextComponent";
 
 function QuestionDesignComponent() {

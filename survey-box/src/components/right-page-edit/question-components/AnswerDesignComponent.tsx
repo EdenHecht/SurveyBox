@@ -6,7 +6,7 @@ import QuestionTextComponent from "./QuestionTextComponent";
 import {
   updateAnswersColor,
   updateAnswersSize,
-} from "../../../redux/pageActions";
+} from "../../../redux/actions/styleActions";
 
 function AnswerDesignComponent() {
   const currPageIndex = useSelector(

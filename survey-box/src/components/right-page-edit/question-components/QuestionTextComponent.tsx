@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { SELECTION } from "../../../services/pageConstants";
-import TextComponent from "../sub-components/TextComponent";
 import {
   updateAnswerText,
   addNewAnswer,
   deleteAnswerOption,
-} from "../../../redux/pageActions";
+} from "../../../redux/actions/styleActions";
 import "./QuestionTextComponent.scss";
 
 function QuestionTextComponent(props: any) {

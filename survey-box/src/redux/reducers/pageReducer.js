@@ -23,8 +23,8 @@ import {
   UPDATE_SURVEY_NAME,
   UPDATE_PAGE_NAME,
   DELETE_PAGE_ANSWER,
-} from "./pageTypes";
-import buildPage from "../services/PageFactory";
+} from "../pageTypes";
+import buildPage from "../../services/PageFactory";
 
 const initialState = {
   pages: [],

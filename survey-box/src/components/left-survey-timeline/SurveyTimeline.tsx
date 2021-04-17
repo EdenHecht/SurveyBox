@@ -6,7 +6,7 @@ import {
   updateCurrPage,
   updatePageOrder,
   updateSurveyName,
-} from "../../redux/pageActions";
+} from "../../redux/actions/pageActions";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function SurveyTimeline() {

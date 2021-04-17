@@ -1,8 +1,4 @@
 import {
-  ADD_PAGE,
-  DELETE_PAGE,
-  UPDATE_CURR_PAGE,
-  UPDATE_PAGE_ORDER,
   UPDATE_PAGE_BACKGROUND,
   UPDATE_BUTTON_FONT_SIZE,
   UPDATE_BUTTON_BG_COLOR,
@@ -20,38 +16,8 @@ import {
   UPDATE_ANSWERS_SIZE,
   UPDATE_ANSWERS_TEXT,
   ADD_NEW_ANSWER,
-  UPDATE_SURVEY_NAME,
-  UPDATE_PAGE_NAME,
   DELETE_PAGE_ANSWER,
-} from "./pageTypes";
-
-export const addPage = (pageType) => {
-  return {
-    type: ADD_PAGE,
-    payload: pageType,
-  };
-};
-
-export const deletePage = (pageIndex) => {
-  return {
-    type: DELETE_PAGE,
-    payload: pageIndex,
-  };
-};
-
-export const updateCurrPage = (pageIndex) => {
-  return {
-    type: UPDATE_CURR_PAGE,
-    payload: pageIndex,
-  };
-};
-
-export const updatePageOrder = (updatedParams) => {
-  return {
-    type: UPDATE_PAGE_ORDER,
-    payload: updatedParams,
-  };
-};
+} from "../pageTypes";
 
 export const updatePageBackground = (pageId, updatedColor) => {
   return {
@@ -154,20 +120,6 @@ export const updateAnswersSize = (pageId, updatedAnswersSize) => {
   return {
     type: UPDATE_ANSWERS_SIZE,
     payload: { pageId, updatedAnswersSize },
-  };
-};
-
-export const updateSurveyName = (updatedSurveyName) => {
-  return {
-    type: UPDATE_SURVEY_NAME,
-    payload: updatedSurveyName,
-  };
-};
-
-export const updatePageName = (pageId, updatedPageName) => {
-  return {
-    type: UPDATE_PAGE_NAME,
-    payload: { pageId, updatedPageName },
   };
 };
 

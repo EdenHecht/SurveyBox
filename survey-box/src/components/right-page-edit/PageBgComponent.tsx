@@ -1,5 +1,5 @@
 import BackgroundComponent from "./sub-components/BackgroundComponent";
-import { updatePageBackground } from "../../redux/pageActions";
+import { updatePageBackground } from "../../redux/actions/styleActions";
 
 function PageBgComponent() {
   return (

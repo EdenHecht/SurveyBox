@@ -1,12 +1,11 @@
-import React from "react";
 import FontSizeComponent from "../sub-components/FontSizeComponent";
 import BackgroundComponent from "../sub-components/BackgroundComponent";
 import {
   updateHeaderColor,
   updateHeaderFontSize,
   updateHeaderText,
-} from "../../../redux/pageActions";
-import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+} from "../../../redux/actions/styleActions";
+import { RootStateOrAny, useSelector } from "react-redux";
 import TextComponent from "../sub-components/TextComponent";
 
 function HeaderDesignComponent() {
@@ -16,8 +15,6 @@ function HeaderDesignComponent() {
   const currPage = useSelector((state: RootStateOrAny) =>
     currPageIndex !== -1 ? state.pages[currPageIndex] : null
   );
-
-  const dispatch = useDispatch();
 
   return (
     <div className="header-style pad border-bottom">

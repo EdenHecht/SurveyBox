@@ -6,8 +6,8 @@ import {
   updateSubHeaderColor,
   updateSubHeaderSize,
   updateSubHeaderText,
-} from "../../../redux/pageActions";
-import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+} from "../../../redux/actions/styleActions";
+import { RootStateOrAny, useSelector } from "react-redux";
 
 function SubHeaderDesignComponent() {
   const currPageIndex = useSelector(
@@ -16,7 +16,6 @@ function SubHeaderDesignComponent() {
   const currPage = useSelector((state: RootStateOrAny) =>
     currPageIndex !== -1 ? state.pages[currPageIndex] : null
   );
-  const dispatch = useDispatch();
 
   return (
     <div className="sub-header-style pad border-bottom">

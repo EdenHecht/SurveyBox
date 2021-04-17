@@ -3,7 +3,7 @@ import {
   updateButtonFontSize,
   updateButtonFontColor,
   updateButtonBgColor,
-} from "../../redux/pageActions";
+} from "../../redux/actions/styleActions";
 import BackgroundComponent from "./sub-components/BackgroundComponent";
 import FontSizeComponent from "./sub-components/FontSizeComponent";
 

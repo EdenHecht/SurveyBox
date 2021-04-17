@@ -6,7 +6,7 @@ import QuestionStyleOptions from "./question-components/QuestionStyleOptions";
 import ButtonComponent from "./ButtonComponent";
 import PageBgComponent from "./PageBgComponent";
 import { GOODBYE_PAGE } from "../../services/pageConstants";
-import { updatePageName } from "../../redux/pageActions";
+import { updatePageName } from "../../redux/actions/pageActions";
 
 function PageEditor() {
   const currPageIndex = useSelector(
