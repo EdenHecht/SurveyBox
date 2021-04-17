@@ -34,7 +34,7 @@ I divided this project into 3 parts:
 13.	Make the statement pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
 14. Make the question pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
 
-15.Decide what language to build the server, learn it and update the specification document accordingly
+15. Decide what language to build the server, learn it and update the specification document accordingly
 
 ###### next milestone:
 set up back end (node, express, mongoDB, mogoose) and create the survey model
