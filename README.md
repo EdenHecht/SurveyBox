@@ -12,7 +12,7 @@ You are more then welcome to red more about the project in the specification doc
 I divided this project into 3 parts:
 1.	The first part is to design the UI and implement it with react and css, without any functionality (1-3).
 2.	The second part is to make the UI functional (4-14)
-3.	The third part is to build a small server for the users to be able to edit, view and vote at all times.
+3.	The third part is to build a server for the users to be able to edit, view and vote at all times.
 
 #### Milestones :
 
@@ -34,5 +34,7 @@ I divided this project into 3 parts:
 13.	Make the statement pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
 14. Make the question pages edit functionality (header and sub-header edit), display the changes in the preview window and update the state accordingly
 
+15.Decide what language to build the server, learn it and update the specification document accordingly
+
 ###### next milestone:
-Decide what language to build the server, learn it and build a small server (one URL server at first, without data base)
+set up back end (node, express, mongoDB, mogoose) and create the survey model
