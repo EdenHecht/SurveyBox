@@ -1,3 +1,4 @@
+export const ADD_SURVEY = "ADD_SURVEY";
 export const ADD_PAGE = "ADD_PAGE";
 export const DELETE_PAGE = "DELETE_PAGE";
 export const UPDATE_CURR_PAGE = "UPDATE_CURR_PAGE";

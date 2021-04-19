@@ -1,4 +1,5 @@
 import {
+  ADD_SURVEY,
   ADD_PAGE,
   DELETE_PAGE,
   UPDATE_CURR_PAGE,
@@ -25,7 +26,7 @@ import {
   DELETE_PAGE_ANSWER,
 } from "../pageTypes";
 import buildPage from "../../services/PageFactory";
-
+import { createNewSurvey } from "../../services/PageFactory";
 const initialState = {
   pages: [],
   currPageIndex: -1,
@@ -38,6 +39,12 @@ const pageReducer = (state = initialState, action) => {
   let pageIndex;
 
   switch (action.type) {
+    case ADD_SURVEY:
+      //create new survey object: TODO
+
+      //update the database
+      createNewSurvey(state.pages, state.surveyName);
+
     case ADD_PAGE:
       const pageObject = buildPage(action.payload);
 

@@ -1,4 +1,5 @@
 import {
+  ADD_SURVEY,
   ADD_PAGE,
   DELETE_PAGE,
   UPDATE_CURR_PAGE,
@@ -6,6 +7,12 @@ import {
   UPDATE_SURVEY_NAME,
   UPDATE_PAGE_NAME,
 } from "../pageTypes";
+
+export const addSurvey = () => {
+  return {
+    type: ADD_SURVEY,
+  };
+};
 
 export const addPage = (pageType) => {
   return {

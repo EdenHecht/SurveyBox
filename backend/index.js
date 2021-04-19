@@ -3,12 +3,14 @@ import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import SurveyRoutes from "./routes/survey.js";
 
 const app = express();
 dotenv.config();
-
-app.use(bodyParser.json());
+app.use(express.urlencoded());
+app.use(express.json());
 app.use(cors());
+app.use("", SurveyRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 5000;

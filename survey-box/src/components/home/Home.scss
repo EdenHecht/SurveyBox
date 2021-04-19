@@ -1,0 +1,80 @@
+.home-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em;
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6em;
+  }
+
+  .logo {
+    font-family: "anton";
+    font-size: 45px;
+    color: #597b77;
+  }
+
+  .right-section {
+    display: flex;
+    align-self: center;
+
+    .greet {
+      margin-right: 2em;
+    }
+
+    .search-box {
+      border-radius: 15px;
+      background: #fdfeff;
+      border: 1px solid #b6b6b6;
+      height: 23px;
+    }
+
+    .search-input {
+      outline: none;
+      border: none;
+      background: transparent;
+      padding: 3px 10px;
+      width: 106px;
+      font-family: "Nunito";
+    }
+
+    .search-input:focus {
+      outline: none;
+    }
+
+    .search-icon {
+      width: 0.75em;
+      color: #5e676b;
+      padding: 0 10px;
+    }
+  }
+
+  .new-survey {
+    width: 242px;
+    height: 191px;
+    background: #dfe3e5;
+    display: flex;
+    justify-content: center;
+    border-radius: 13px;
+
+    .add-btn {
+      width: 60px;
+      height: 60px;
+      background: #d9a04f;
+      border-radius: 50%;
+      color: #f9f9f9;
+      font-weight: bold;
+      font-size: 50px;
+      margin: auto;
+      line-height: 1;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .add-btn:focus {
+      outline: none;
+    }
+  }
+}
