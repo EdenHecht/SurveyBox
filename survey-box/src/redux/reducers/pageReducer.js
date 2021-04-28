@@ -26,41 +26,52 @@ import {
   DELETE_PAGE_ANSWER,
 } from "../pageTypes";
 import buildPage from "../../services/PageFactory";
-import { createNewSurvey } from "../../services/PageFactory";
+import { createNewSurvey, createNewSurveyPage } from "./reducerHelper";
 const initialState = {
-  pages: [],
-  currPageIndex: -1,
-  surveyName: "Survey Name",
+  surveys: [],
+  currentSurvey: null,
 };
 
 const pageReducer = (state = initialState, action) => {
+  let surveysCopy = [...state.surveys];
   let currPages;
   let pagesCopy;
   let pageIndex;
 
   switch (action.type) {
     case ADD_SURVEY:
-      //create new survey object: TODO
-
-      //update the database
-      createNewSurvey(state.pages, state.surveyName);
-
-    case ADD_PAGE:
-      const pageObject = buildPage(action.payload);
-
-      currPages = [...state.pages, pageObject];
+      const survey = action.payload;
+      const newSurvey = { ...survey, currPageIndex: -1 };
+      const newSurveyArray = [...state.surveys, newSurvey];
 
       return {
         ...state,
-        pages: currPages,
+        surveys: newSurveyArray,
+        currentSurvey: {
+          id: newSurvey._id,
+          index: newSurveyArray.length - 1,
+        },
+      };
+
+    case ADD_PAGE:
+      const pageObject = buildPage(action.payload);
+      surveysCopy[state.currentSurvey.index].pages = [
+        ...surveysCopy[state.currentSurvey.index].pages,
+        pageObject,
+      ];
+      //createNewSurveyPage();
+      return {
+        ...state,
+        surveys: [...surveysCopy],
       };
 
     case DELETE_PAGE:
-      currPages = [...state.pages];
+      currPages = [...surveysCopy[state.currentSurvey.index].pages];
       const removedIndex = action.payload;
-      let updatedCurrPageIndex = state.currPageIndex;
+      let updatedCurrPageIndex =
+        surveysCopy[state.currentSurvey.index].currPageIndex;
 
-      if (removedIndex <= state.currPageIndex) {
+      if (removedIndex <= updatedCurrPageIndex) {
         updatedCurrPageIndex -= 1;
       }
 
@@ -75,23 +86,32 @@ const pageReducer = (state = initialState, action) => {
           .slice(0, removedIndex)
           .concat(currPages.slice(removedIndex + 1));
 
+      surveysCopy[
+        state.currentSurvey.index
+      ].currPageIndex = updatedCurrPageIndex;
+      surveysCopy[state.currentSurvey.index].pages = currPages;
+
       return {
         ...state,
-        pages: currPages,
-        currPageIndex: updatedCurrPageIndex,
+        surveys: surveysCopy,
       };
 
     case UPDATE_CURR_PAGE:
+      surveysCopy[state.currentSurvey.index].currPageIndex = action.payload;
+
       return {
         ...state,
-        currPageIndex: action.payload,
+        surveys: surveysCopy,
       };
 
     case UPDATE_PAGE_ORDER:
+      surveysCopy[state.currentSurvey.index].currPageIndex =
+        action.payload.updatedPageIndex;
+      surveysCopy[state.currentSurvey.index].pages = action.payload.pagesCopy;
+
       return {
         ...state,
-        currPageIndex: action.payload.updatedPageIndex,
-        pages: action.payload.pagesCopy,
+        surveys: surveysCopy,
       };
 
     case UPDATE_PAGE_BACKGROUND:

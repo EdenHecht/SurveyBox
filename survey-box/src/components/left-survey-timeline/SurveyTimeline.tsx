@@ -10,19 +10,28 @@ import {
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function SurveyTimeline() {
-  const pages = useSelector((state: RootStateOrAny) => state.pages);
+  const survey = useSelector(
+    (state: RootStateOrAny) => state.surveys[state.currentSurvey?.index]
+  );
+  const pages = useSelector(
+    (state: RootStateOrAny) => state.surveys[state.currentSurvey?.index]?.pages
+  );
   const currPageIndex = useSelector(
-    (state: RootStateOrAny) => state.currPageIndex
+    (state: RootStateOrAny) =>
+      state.surveys[state.currentSurvey?.index]?.currPageIndex
   );
 
-  const surveyName = useSelector((state: RootStateOrAny) => state.surveyName);
+  const surveyName = useSelector(
+    (state: RootStateOrAny) =>
+      state.surveys[state.currentSurvey?.index]?.surveyName
+  );
   const dispatch = useDispatch();
   const [toggleSurveyName, setToggleSurveyName] = useState(false);
 
   //check if can delete this
   useEffect(() => {
-    pages.length === 1 && dispatch(updateCurrPage(0));
-  }, [pages, dispatch]);
+    pages && pages.length === 1 && dispatch(updateCurrPage(0));
+  }, [pages]);
 
   const onDragEnd = useCallback(
     (result) => {
@@ -66,7 +75,8 @@ function SurveyTimeline() {
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
-              {pages.length !== 0 &&
+              {pages &&
+                pages.length !== 0 &&
                 pages.map((page: any, index: number) => (
                   <Draggable
                     key={`timeline-page-${index}`}

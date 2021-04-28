@@ -7,8 +7,11 @@ export const handleGetSurvey = (req, res) => {
 
 export const createNewSurvey = async (req, res) => {
   const survey = req.body;
-  const newSurvey = new Survey(survey);
-
+  const newSurvey = new Survey({
+    surveyName: survey.surveyName,
+    pages: survey.pages,
+  });
+  newSurvey.markModified("surveyName");
   try {
     await newSurvey.save();
     res.status(201).json(newSurvey);
@@ -19,11 +22,15 @@ export const createNewSurvey = async (req, res) => {
 
 export const createNewPage = async (req, res) => {
   const page = req.body;
+  const { id: _id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(_id))
+    return res.status(404).send(`No survey with id: ${_id}`);
+  let survey = await Survey.findById(_id);
+  survey.pages.push(page);
 
-  const newSurvey = new Survey({ pages: [page] });
   try {
-    await newSurvey.save();
-    res.status(201).json(newSurvey);
+    await survey.save();
+    res.status(201).json(survey);
   } catch (error) {
     res.status(400).json({ error });
   }

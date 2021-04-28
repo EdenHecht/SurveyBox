@@ -57,6 +57,8 @@
   },
   "devDependencies": {
     "@types/react-beautiful-dnd": "^13.0.0",
-    "@types/react-color": "^3.0.4"
+    "@types/react-color": "^3.0.4",
+    "@types/react-router": "^3.0.19",
+    "@types/react-router-dom": "^5.1.7"
   }
 }

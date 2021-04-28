@@ -18,17 +18,6 @@ import IPage from "../pageClasses/IPage";
 let pagesIdCounter = 0;
 const url = "http://localhost:5000";
 
-export const createNewSurvey = (pages: [], surveyName: string) => {
-  const urlsurevy = `${url}/survey`;
-  axios
-    .post(urlsurevy, { pages: pages, surveyName: surveyName })
-    .then(
-      (res) =>
-        (window.location.href = `${window.location.href}survey/${res.data._id}`)
-    )
-    .catch((err) => err);
-};
-
 let buildPage = (pageType: string): IPage | null => {
   let newPage = null;
   switch (pageType) {
@@ -54,10 +43,10 @@ let buildPage = (pageType: string): IPage | null => {
     default:
       return null;
   }
-  axios
-    .post(url, newPage)
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
+  // axios
+  //   .post(url, newPage)
+  //   .then((res) => console.log(res))
+  //   .catch((err) => console.log(err));
 
   return newPage;
 };

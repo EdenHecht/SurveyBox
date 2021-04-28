@@ -7,10 +7,21 @@ import {
   UPDATE_SURVEY_NAME,
   UPDATE_PAGE_NAME,
 } from "../pageTypes";
+import axios from "axios";
+
+const url = "http://localhost:5000";
 
 export const addSurvey = () => {
-  return {
-    type: ADD_SURVEY,
+  return async (dispatch) => {
+    const urlsurevy = `${url}/survey`;
+    const survey = {
+      surveyName: "Survey Name",
+      pages: [],
+    };
+
+    const { data } = await axios.post(urlsurevy, survey);
+
+    dispatch({ type: ADD_SURVEY, payload: data });
   };
 };
 
