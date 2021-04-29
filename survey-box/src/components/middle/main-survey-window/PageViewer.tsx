@@ -5,15 +5,11 @@ import { GOODBYE_PAGE } from "../../../services/pageConstants";
 import QuestionTypePreview from "./QuestionTypePreview";
 
 function PageViewer() {
-  const currentSurvey = useSelector(
-    (state: RootStateOrAny) => state.surveys[state.currentSurvey?.index]
+  const currPageIndex = useSelector(
+    (state: RootStateOrAny) => state.currPageIndex
   );
-
-  const currPageIndex = currentSurvey?.currPageIndex;
-
-  const pages = currentSurvey?.pages;
-  const currPage =
-    currPageIndex && currPageIndex !== -1 ? pages[currPageIndex] : null;
+  const pages = useSelector((state: RootStateOrAny) => state.pages);
+  const currPage = currPageIndex !== -1 ? pages[currPageIndex] : null;
   const [viewerStyle, setViewerStyle] = useState({});
   const [buttonStyle, setButtonStyle] = useState({});
   const [headerStyle, setHeaderStyle] = useState({});
@@ -21,14 +17,12 @@ function PageViewer() {
   const [questionStyle, setQuestionStyle] = useState({});
 
   const headerText =
-    pages && pages.length !== 0 && currPageIndex !== -1
+    pages.length !== 0 && currPageIndex !== -1
       ? pages[currPageIndex].headerText
       : null;
 
   const currPageAnswers =
-    pages && pages.length !== 0 && currPageIndex !== -1
-      ? currPage.answersText
-      : null;
+    pages.length !== 0 && currPageIndex !== -1 ? currPage.answersText : null;
 
   useEffect(() => {
     if (currPage === null) return;

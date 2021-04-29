@@ -9,13 +9,12 @@ import {
 } from "../../../redux/actions/styleActions";
 
 function AnswerDesignComponent() {
-  const currentSurvey = useSelector(
-    (state: RootStateOrAny) => state.surveys[state.currentSurvey?.index]
+  const currPageIndex = useSelector(
+    (state: RootStateOrAny) => state.currPageIndex
   );
-  const currPageIndex = currentSurvey.currPageIndex;
-
-  const currPage =
-    currPageIndex !== -1 ? currentSurvey.pages[currPageIndex] : null;
+  const currPage = useSelector((state: RootStateOrAny) =>
+    currPageIndex !== -1 ? state.pages[currPageIndex] : null
+  );
 
   return (
     <div className="answer-style pad border-bottom">

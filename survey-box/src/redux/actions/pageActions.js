@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   ADD_SURVEY,
   ADD_PAGE,
@@ -7,15 +8,13 @@ import {
   UPDATE_SURVEY_NAME,
   UPDATE_PAGE_NAME,
 } from "../pageTypes";
-import axios from "axios";
-
-const url = "http://localhost:5000";
+import { SURVEY_NAME, URL } from "../../services/pageConstants";
 
 export const addSurvey = () => {
   return async (dispatch) => {
-    const urlsurevy = `${url}/survey`;
+    const urlsurevy = `${URL}/survey`;
     const survey = {
-      surveyName: "Survey Name",
+      surveyName: SURVEY_NAME,
       pages: [],
     };
 

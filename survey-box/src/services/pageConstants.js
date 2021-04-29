@@ -7,3 +7,6 @@ export const GOODBYE_PAGE = "Goodbye page";
 
 export const SELECTION = "SELECTION";
 export const TEXT = "TEXT";
+
+export const SURVEY_NAME = "Survey Name";
+export const URL = "http://localhost:5000";

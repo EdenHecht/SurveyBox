@@ -10,12 +10,12 @@ import "./QuestionTypePreview.scss";
 
 function QuestionTypePreview(props: any) {
   const { pageType } = props;
-  const currentSurvey = useSelector(
-    (state: RootStateOrAny) => state.surveys[state.currentSurvey?.index]
-  );
-  const currPageIndex = currentSurvey.currPageIndex;
 
-  const pages = currentSurvey.pages;
+  const currPageIndex = useSelector(
+    (state: RootStateOrAny) => state.currPageIndex
+  );
+
+  const pages = useSelector((state: RootStateOrAny) => state.pages);
   const currPage = currPageIndex !== -1 ? pages[currPageIndex] : null;
 
   const currPageAnswers =

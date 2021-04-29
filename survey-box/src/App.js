@@ -6,6 +6,7 @@ import MainWindow from "./components/middle/main-window/MainWindow";
 import "./App.css";
 import store from "./redux/store";
 import Home from "./components/home/Home";
+import EditContainer from "./components/editContainer/EditContainer";
 
 function App() {
   return (
@@ -13,11 +14,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/survey/:id">
-            <div className="App">
-              <SurveyTimeline />
-              <MainWindow />
-              <PageEditor />
-            </div>
+            <EditContainer />
           </Route>
           <Route path="/" exact>
             <Home />

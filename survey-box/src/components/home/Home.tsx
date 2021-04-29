@@ -9,14 +9,14 @@ import { addSurvey } from "../../redux/actions/pageActions";
 const Home = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const currentSurvey = useSelector(
-    (state: RootStateOrAny) => state.currentSurvey
+  const currentSurveyId = useSelector(
+    (state: RootStateOrAny) => state.currentSurveyId
   );
   useEffect(() => {
-    if (currentSurvey) {
-      history.push(`/survey/${currentSurvey.id}`);
+    if (currentSurveyId) {
+      history.push(`/survey/${currentSurveyId}`);
     }
-  }, [currentSurvey]);
+  }, [currentSurveyId]);
 
   return (
     <div className="home-container">
